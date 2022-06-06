@@ -1,8 +1,8 @@
-import { Navbar } from "./Pages/Navbar";
+import { AllRoutes } from "./Pages/AllRoutes";
 import "./styles.css";
 
 export default function App() {
   return <div className="App">
-    <Navbar/>
+       <AllRoutes/>
   </div>;
 }

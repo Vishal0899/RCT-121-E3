@@ -1,23 +1,30 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { Home } from "./Home";
-import { Login } from "./Login";
-import { Posts } from "./Posts";
-import { PrivateRoute } from "./PrivateRoute";
+import { Routes, Route } from "react-router-dom"
+import PrivateRoute from "../Components/PostItem"
+import { Home } from "./Home"
+import Navbar from "./Navbar"
+import { Posts } from "./Posts"
+
+
+
 
 export const AllRoutes = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route
-        path="/posts"
-        element={
-          <PrivateRoute>
-            <Posts />
-          </PrivateRoute>
-        }
-      />
-      <Route path="/login" element={<Login />} />
-    </Routes>
-  );
-};
+
+    return (
+        <div>
+            <Navbar />
+
+            <div>
+
+                <Routes>
+                    <Route path="/" element={<Home />}></Route>
+                    <Route path="/posts" element={
+                        <PrivateRoute>
+                            <Posts />
+                        </PrivateRoute>
+                    }
+                    ></Route>
+                </Routes>
+            </div>
+        </div>
+    )
+}
